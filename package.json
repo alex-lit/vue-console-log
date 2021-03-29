@@ -1,0 +1,48 @@
+{
+  "name": "@alexlit/vue-console-log",
+  "version": "0.0.1",
+  "private": false,
+  "description": "Vue Console Log",
+  "keywords": [
+    "console",
+    "log",
+    "plugin",
+    "vue"
+  ],
+  "homepage": "https://github.com/alex-lit/vue-console-log#readme",
+  "bugs": {
+    "url": "https://github.com/alex-lit/vue-console-log/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alex-lit/vue-console-log.git"
+  },
+  "license": "MIT",
+  "author": "Alexey Litovchenko",
+  "maintainers": [
+    "Alexey Litovchenko <alex.lit@outlook.com> (https://alexlit.gitlab.io)"
+  ],
+  "main": "plugin/index.ts",
+  "files": [
+    "plugin"
+  ],
+  "scripts": {
+    "lint": "./node_modules/@alexlit/lint-kit/scripts/lint.sh",
+    "lint:eslint": "./node_modules/@alexlit/lint-kit/scripts/lint.eslint.sh",
+    "lint:markdownlint": "./node_modules/@alexlit/lint-kit/scripts/lint.markdownlint.sh",
+    "lint:stylelint": "./node_modules/@alexlit/lint-kit/scripts/lint.stylelint.sh",
+    "publish": "./node_modules/@alexlit/lint-kit/scripts/publish.sh",
+    "semver": "./node_modules/@alexlit/lint-kit/scripts/semver.sh",
+    "up": "./node_modules/@alexlit/lint-kit/scripts/up.sh",
+    "version": "./node_modules/@alexlit/lint-kit/scripts/version.sh"
+  },
+  "dependencies": {
+    "lodash": "^4.17.21"
+  },
+  "devDependencies": {
+    "@alexlit/lint-kit": "^3.1.0",
+    "@types/lodash": "^4.14.168",
+    "typescript": "^4.2.3",
+    "vue": "^2.6.12"
+  }
+}
