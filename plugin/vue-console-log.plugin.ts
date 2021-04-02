@@ -28,6 +28,11 @@ interface LogOptions {
    * Plugin state
    */
   isEnabled: boolean;
+
+  /**
+   * Native console method
+   */
+  method: 'error' | 'info' | 'log' | 'warn';
 }
 
 declare module 'vue/types/vue' {
@@ -42,6 +47,7 @@ declare module 'vue/types/vue' {
 const defaults: LogOptions = {
   color: '#75c663',
   isEnabled: true,
+  method: 'info',
 };
 
 /**
@@ -49,14 +55,16 @@ const defaults: LogOptions = {
  *
  * @param config
  */
-function createMixin(config: LogOptions = defaults) {
+export function createMixin(config: Partial<LogOptions> = defaults) {
+  const mixinConfig = { ...defaults, ...config };
+
   return {
     methods: {
       $log(...data: any[]): boolean {
-        if (config.isEnabled) {
-          console.info(
+        if (mixinConfig.isEnabled) {
+          console[mixinConfig.method](
             `%c<${kebabCase((this as Vue).$options.name)}>`,
-            `color: ${config.color}`,
+            `color: ${mixinConfig.color}`,
             ...data,
           );
 
@@ -75,13 +83,11 @@ function createMixin(config: LogOptions = defaults) {
  * @param vue
  * @param options
  */
-function install(vue: VueConstructor, options: LogOptions) {
+function install(vue: VueConstructor, options: Partial<LogOptions> = defaults) {
   const config = { ...defaults, ...options };
 
   vue.mixin(createMixin(config));
 }
-
-export const vueConsoleLogMixin = createMixin();
 
 export default {
   defaults,

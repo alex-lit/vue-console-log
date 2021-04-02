@@ -1,7 +1,5 @@
 // eslint-disable-next-line filenames/match-exported
-import VueConsoleLogPlugin, {
-  vueConsoleLogMixin,
-} from './vue-console-log.plugin';
+import VueConsoleLogPlugin, { createMixin } from './vue-console-log.plugin';
 
-export { vueConsoleLogMixin };
+export { createMixin };
 export default VueConsoleLogPlugin;
