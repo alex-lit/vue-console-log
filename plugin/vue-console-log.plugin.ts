@@ -18,9 +18,7 @@ interface LogOptions {
    * Prefix color (css value)
    *
    * @example
-   * ```ts
-   *  'red', '#fff'
-   * ```
+   *   'red', '#fff';
    */
   color: string;
 

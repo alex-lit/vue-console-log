@@ -9,6 +9,7 @@
     "moduleResolution": "Node",
     "noEmit": true,
     "noImplicitAny": false,
+    "outDir": "dist",
     "paths": {
       "~/*": ["./src/*"]
     },
@@ -19,5 +20,6 @@
     "target": "ES2018",
     "types": ["@types/lodash"]
   },
-  "exclude": ["dist", "node_modules"]
+  "exclude": ["dist", "node_modules"],
+  "include": ["plugin/index.ts"]
 }
